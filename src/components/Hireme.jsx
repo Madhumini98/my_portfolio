@@ -15,9 +15,17 @@ const Hireme = () => {
             Do you want any work from me?
           </h2>
           <p className="lg: text-justify max-w-lg text-sm mt-4 text-gray-200 leading-6">
-          If you're in search of Fullstack development and UI/UX design services, feel free to reach out to me. I specialize in both domains and would love to collaborate with you. Whether it's crafting intuitive user interfaces or building robust web applications, I'm here to turn your ideas into reality. Explore my portfolio and get in touch to discuss how we can bring your projects to life. Let's work together to create exceptional digital experiences.
+            If you're in search of Fullstack development and UI/UX design
+            services, feel free to reach out to me. I specialize in both domains
+            and would love to collaborate with you. Whether it's crafting
+            intuitive user interfaces or building robust web applications, I'm
+            here to turn your ideas into reality. Explore my portfolio and get
+            in touch to discuss how we can bring your projects to life. Let's
+            work together to create exceptional digital experiences.
           </p>
-          <button className="btn-primary mt-10">Say Hello</button>
+          <a href="#contact">
+            <button className="btn-primary mt-10">Say Hello</button>
+          </a>
         </div>
         <img
           src={hireMe}

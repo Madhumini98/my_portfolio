@@ -112,14 +112,14 @@ const certificates = [
   },
   {
     imageUrl: certificate10,
-    title: "Qualifier 1.0 Chapter 1",
+    title: "Qualifier1.0 Chapter 1",
     organization: "GAPSTARS",
     date: "November 2021",
     link: "https://drive.google.com/file/d/1yvEMOWrNDFNRcgmWiVYG5Hh_YutgIpNE/view?usp=drivesdk",
   },
   {
     imageUrl: certificate11,
-    title: "Qualifier 1.0 Chapter 2",
+    title: "Qualifier1.0 Chapter 2",
     organization: "JOHN KEELS",
     date: "November 2021",
     link: "https://drive.google.com/file/d/1yvEMOWrNDFNRcgmWiVYG5Hh_YutgIpNE/view?usp=drivesdk",
@@ -253,13 +253,17 @@ const Winnings = () => {
         <p className="text-gray-400 mt-3 text-lg">
           These symbolize the milestones I've achieved through Hackathons and various competitions.
         </p>
-
         <div className="flex items-center justify-center mt-12 gap-2 flex-wrap">
           <div className="w-full">
             <div className="swiper-container">
               <Swiper
-                slidesPerView={5}
-                spaceBetween={1}
+                slidesPerView={1.2} // Show one slide at a time
+                spaceBetween={2}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 5,
+                  },
+                }}
                 loop={true}
                 autoplay={{ delay: 3000 }}
                 pagination={{ clickable: true }}
@@ -270,15 +274,21 @@ const Winnings = () => {
                       href={achievement.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-2 group border-cyan-600 relative w-[16rem] h-[18rem] bg-gray-900 p-10 rounded-xl flex flex-col items-center"
+                      className="border-2 group border-cyan-600 relative w-full bg-gray-900 p-5 rounded-xl flex flex-col items-center"
+                      style={{
+                        width: "16rem", // Set a fixed width
+                        height: "18rem", // Set a fixed height
+                      }}
                     >
                       <div
                         style={{
                           backgroundImage: `url(${achievement.imageUrl})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
+                          width: "100%", // Make sure the image covers the whole container
+                          height: "100%", // Make sure the image covers the whole container
                         }}
-                        className="w-32 h-32 rounded"
+                        className="rounded"
                       ></div>
                       <h3 className="text-xl mt-3">{achievement.title}</h3>
                       <p className="text-gray-400 mt-0.05">
@@ -303,12 +313,12 @@ const Winnings = () => {
           {badges.map((badge, i) => (
             <div
               key={i}
-              className="mr-4 mb-4" // Add some margin to separate the badges
+              className="mr-3 mb-3" // Add some margin to separate the badges
             >
               <img
                 src={badge}
                 alt={`Badge ${i + 1}`}
-                className="w-32 h-32 rounded" // Adjust the width and height as needed
+                className="w-20 h-20 rounded" // Adjust the width and height as needed
               />
             </div>
           ))}
@@ -318,13 +328,17 @@ const Winnings = () => {
         <p className="text-gray-400 mt-3 text-lg">
           These certificates are a testament to my participation in a variety of courses and workshops.
         </p>
-
         <div className="flex items-center justify-center mt-12 gap-2 flex-wrap">
           <div className="w-full">
             <div className="swiper-container">
               <Swiper
-                slidesPerView={5}
-                spaceBetween={1}
+                slidesPerView={1.2} // Show one slide at a time
+                spaceBetween={2}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 5,
+                  },
+                }}
                 loop={true}
                 autoplay={{ delay: 3000 }}
                 pagination={{ clickable: true }}
@@ -335,15 +349,21 @@ const Winnings = () => {
                       href={certificate.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="border-2 group border-cyan-600 relative w-[16rem] h-[18rem] bg-gray-900 p-10 rounded-xl flex flex-col items-center"
+                      className="border-2 group border-cyan-600 relative w-full bg-gray-900 p-5 rounded-xl flex flex-col items-center"
+                      style={{
+                        width: "16rem", // Set a fixed width
+                        height: "18rem", // Set a fixed height
+                      }}
                     >
                       <div
                         style={{
                           backgroundImage: `url(${certificate.imageUrl})`,
                           backgroundSize: "cover",
                           backgroundPosition: "center",
+                          width: "100%", // Make sure the image covers the whole container
+                          height: "100%", // Make sure the image covers the whole container
                         }}
-                        className="w-32 h-32 rounded"
+                        className="rounded"
                       ></div>
                       <h3 className="text-xl mt-3">{certificate.title}</h3>
                       <p className="text-gray-400 mt-0.05">

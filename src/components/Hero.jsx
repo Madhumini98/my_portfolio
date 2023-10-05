@@ -1,6 +1,6 @@
 import React from "react";
 import hero from "../assets/images/hero.png";
-import Typewriter from "react-typewriter-effect";
+import { Typewriter } from "react-simple-typewriter";
 
 const social_media_links = [
   {
@@ -29,13 +29,6 @@ const social_media_links = [
   },
 ];
 
-const typewriterStrings = [
-  "Frontend Developer",
-  "Backend Developer",
-  "UI/UX Designer",
-  "Content Writer",
-];
-
 const Hero = () => {
   return (
     <section
@@ -52,10 +45,16 @@ const Hero = () => {
               Hello!
               <br />
             </span>
-            I'm <span>Madhumini <br /> Kodithuwakku</span>
+            I'm{" "}
+            <span>
+              Madhumini <br /> Kodithuwakku
+            </span>
           </h1>
-          <button className="btn-primary mt-8">Contact Me</button>
-          <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
+          <TypewriterComponent />
+          <a href="#contact">
+            <button className="btn-primary mt-4 md:mt-6">Contact Me</button>
+          </a>
+          <div className="mt-6 md:mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
             {social_media_links?.map((item) => (
               <a
                 key={item.icon}
@@ -75,16 +74,22 @@ const Hero = () => {
 };
 
 const TypewriterComponent = () => {
+  const typewriterStrings = [
+    "Frontend Developer",
+    "Backend Developer",
+    "UI/UX Designer",
+    "Innovator",
+    "Content Writer",
+  ];
+
   return (
     <h4 className="md:text-2xl text-lg md:leading-normal leading-5 mt-4 font-bold text-gray-600">
-      <Typewriter
-        options={{
-          strings: typewriterStrings,
-          autoStart: true,
-          loop: true,
-          deleteSpeed: 50,
-        }}
-      />
+      <h1 style={{ paddingTop: "1rem", margin: "auto 0", fontWeight: "bold" }}>
+        I'm a {" "}
+        <span style={{ color: "#FFFF", fontWeight: "bold" }}>
+          <Typewriter words={typewriterStrings} loop={5} />
+        </span>
+      </h1>
     </h4>
   );
 };

@@ -27,6 +27,7 @@ const App = () => {
       <Contact />
       <Footer />
     </div>
+    
   );
 };
 

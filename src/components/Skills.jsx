@@ -27,6 +27,12 @@ const Skills = () => {
       level: "Intermediate",
       count: 70,
     },
+    {
+      logo: "logo-python",
+      level: "Intermediate",
+      count: 50,
+    },
+    
 
   ];
   return (
